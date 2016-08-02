@@ -95,6 +95,13 @@
 			<artifactId>druid</artifactId>
 			<version>1.0.21</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/cglib/cglib -->
+		<dependency>
+		    <groupId>cglib</groupId>
+		    <artifactId>cglib</artifactId>
+		    <version>3.1</version>
+		</dependency>
 
 	</dependencies>
 	<build>
