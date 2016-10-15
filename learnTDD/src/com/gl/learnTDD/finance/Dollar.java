@@ -1,15 +1,14 @@
 package com.gl.learnTDD.finance;
 
-public class Dollar {
+public class Dollar extends Money{
 	
-	int amount;
-	
-	Dollar(int amount){
+	Dollar(int amount, String currency){
 		this.amount = amount;
+		this.currency = currency;
 	}
 	
-	Dollar times(int multiplier){
-		return new Dollar(amount*multiplier);
+	Money times(int multiplier){
+		return Money.dollar(amount * multiplier);
 	}
-
+	
 }
