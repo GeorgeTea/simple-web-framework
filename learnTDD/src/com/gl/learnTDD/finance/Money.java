@@ -1,18 +1,25 @@
 package com.gl.learnTDD.finance;
 
-public abstract class Money {
+public class Money {
 	
 	protected int amount;
 	protected String currency;
 	
-	abstract Money times(int multiplier);
+	public Money(int amount, String currency){
+		this.amount = amount;
+		this.currency = currency;
+	}
+	
+	Money times(int multiplier){
+		return new Money(amount * multiplier, currency);
+	}
 	
 	static Money dollar(int amount){
-		return new Dollar(amount, "USD");
+		return new Money(amount, "USD");
 	}
 	
 	static Money franc(int amount){
-		return new Franc(amount, "CHF");
+		return new Money(amount, "CHF");
 	}
 
 	public int getAmount() {
@@ -34,7 +41,7 @@ public abstract class Money {
 	@Override
 	public boolean equals(Object obj) {
 		Money money = (Money) obj;
-		return amount == money.getAmount() && getClass().equals(money.getClass());
+		return this.amount == money.getAmount() && this.currency.equals(money.getCurrency());
 	}
 
 }
